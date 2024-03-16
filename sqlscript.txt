@@ -1,0 +1,11 @@
+CREATE TABLE status_updates(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    status_code VARCHAR(5) UNIQUE NOT NULL,
+    status_update VARCHAR(255) NOT NULL,
+    share VARCHAR(20) NOT NULL,
+    date DATE not NULL,
+    likes BOOLEAN NOT NULL,
+    comments BOOLEAN NOT NULL,
+    sharing BOOLEAN NOT NULL
+);
+    

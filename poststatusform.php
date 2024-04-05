@@ -41,11 +41,12 @@
             <br>
 
             <!-- Date -->
+            <!-- The date has to be equal to the current date. You can't post in the past or future.-->
             <div>
-                <?php $date = date("j/n/y"); ?>
+                <?php $date = date("d/m/Y"); ?>
 
                 <label for="date">Date</label>
-                <input type="text" id="date" name="date" value = "<?=$date?>"
+                <input type="text" id="date" name="date" value = "<?=$date?>" pattern="\d{1,2}/\d{2}/\d{4}"
                             title="Date must follow the format: dd/mm/yyyy"required>  
             </div>
             <br>

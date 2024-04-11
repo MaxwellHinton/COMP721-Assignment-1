@@ -12,7 +12,7 @@
             <div>
                 <label for="stcode">Status Code:</label>
                 <input type="text" id="stcode" name="stcode" pattern="S\d{4}"
-                            title="Status Code starts with an 'S' followed by 4 digits." required>
+                            title="Status Code starts with a captial 'S' followed by 4 digits. 'S0001' etc." required>
             </div>
             <br>
 

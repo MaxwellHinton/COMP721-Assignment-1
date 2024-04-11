@@ -14,5 +14,6 @@ CREATE TABLE status_updates(
 
 --- Inserting values into the table ---
 --- Used in conjunction with bind_param() ---
+
 "INSERT INTO status_updates(st_code, st, share, date, likes, comments, sharing)
 VALUES(?, ?, ?, ?, ?, ?, ?)"

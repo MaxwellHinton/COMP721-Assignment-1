@@ -8,7 +8,7 @@
     <body>
     <div class="content">
         <?php
-            define("DUPLICATE_KEY_ERROR" , 1062);           // Duplicate error code constant (to avoid magic numbers)
+            define("DUPLICATE_KEY_ERROR" , 1062);  // Duplicate error code constant (to avoid magic numbers)
             
             // Check that a form has been submitted.
             if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -24,14 +24,13 @@
 
                     #echo "passed form component check";
                     $stcode = $_POST["stcode"];
-                    $st = trim($_POST["st"]);               // Trim the status for leading or trailing spaces (could indicate a blank status).
+                    $st = trim($_POST["st"]);  // Trim the status for leading or trailing spaces (could indicate a blank status).
                     $share = $_POST["share"];
                     $status_date = $_POST["date"];
                     $likes = isset($_POST["likes"]) ? TRUE : FALSE;
                     $comments = isset($_POST["comments"]) ? TRUE : FALSE;
                     $sharing = isset($_POST["sharing"]) ? TRUE : FALSE;
 
-                    // Check for a blank status.
                     if(empty($st)){
                         echo "<p>The status cannot be blank!</p>";
                         echo "<p><a href=poststatusform.php>Please try again</a></p>";
@@ -104,6 +103,7 @@
                                 $stmt->close();
 
                                 echo "<p>Status update posted succesfully.</p>";
+                                echo "<p><a href='poststatusform.php'>Post another status</a></p>";
                             } 
                             
                             // Catching duplicate status code errors. 
@@ -118,7 +118,6 @@
                                 }
 
                                 echo "<p><a href='poststatusform.php'>Please try again</a></p>";
-                                echo "<p><a href='index.html'>Return to homepage</a></p>";
                             }
 
                         }
@@ -130,9 +129,9 @@
                 else{
                     echo "Error: Please make sure to select a community to post your status to.";
                     echo "<p><a href='poststatusform.php'>Please try again</a></p>";
-                    echo "<p><a href='index.html'>Return to homepage</a></p>";
                 }
             }
+            echo "<p><a href='index.html'>Return to Home Page</a></p>";
         ?>
     </div>
     </body>

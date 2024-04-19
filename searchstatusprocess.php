@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-type"Content-type="text/html;charset=utf-8"/>
+        <link rel="stylesheet" href="styles.css">
         <title>Search Status Process</title>
     </head>
     <body>
-        <h2>Status information</h2>
-        <div class="content">
+        <h2 class="search_header">Status information</h2>
+        <div class="content" id="search_results">
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'GET'){
                 
@@ -34,7 +35,7 @@
 
                                 // table does not exist
                                 echo "<p>No status found in the system. Please use the Post Status Page to post one.</p>";
-                                echo "<p><a href='poststatusformhtml'>Post Status</a></p>";
+                                echo "<p><a href='poststatusform.php'>Post Status</a></p>";
                             }
                             else{
 
@@ -44,7 +45,7 @@
                                 $statement->execute();
 
                                 $search_Result = $statement->get_result();
-
+                                $statement->close();
 
                                 // Process data
                                 // check that there are matches
@@ -67,31 +68,33 @@
                                         $comments = $row['comments'] == 1 ? "Allow Comments" : "";
                                         $sharing = $row['sharing'] == 1 ? "Allow Sharing" : "";                                    
 
-                                        echo "<p>Status: " . $st . "<br>";
-                                        echo "Status code: " . $stcode . "</p>";
+                                        // Using a div element class='result' so that I can style output better.
+                                        echo "<div class='results'>";
+                                        echo "<p><strong>Status: </strong>" . $st . "<br>";
+                                        echo "<strong>Status code: </strong>" . $stcode . "</p>";
 
-                                        echo "<p>Share: " . $share . "<br>";
-                                        echo "Date Posted: " . $date . "<br>";
-                                        echo "Permissions: ";
+                                        echo "<p><strong>Share: </strong>" . $share . "<br>";
+                                        echo "<strong>Date Posted: </strong>" . $date . "<br>";
+                                        echo "<strong>Permissions: </strong>";
                                         if(!empty($likes)) echo "$likes, ";
                                         if(!empty($comments)) echo "$comments, ";
                                         if(!empty($sharing)) echo "$sharing";
                                         echo "</p>";
-                                    
+                                        echo "</div>";
                                     }
                                 }
-
-                                $statement->close();
+                                
                             }
                         }
+                        $conn->close();
                     }
                     else{ //An empty string was given.
 
                         echo "The string given is empty. Please enter a keyword to search.";
                     }
 
-                    echo "<p><a href='searchstatusform.html'>Search again</a></p>";
-                    echo "<p><a href='index.html'>Return to Home Page</a></p>";
+                    echo "<p><a id='search_again' href='searchstatusform.html'>Search again</a></p>";
+                    echo "<p><a class='homePageLink' href='index.html'>Return to Home Page</a></p>";
                 }
                 else{
 
@@ -102,8 +105,6 @@
 
                 echo "The form has not been submitted.";
             }
-
-            $conn->close();
         ?>
         </div>
     </body>

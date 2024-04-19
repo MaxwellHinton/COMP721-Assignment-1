@@ -13,7 +13,18 @@ CREATE TABLE status_updates(
 );
 
 --- Inserting values into the table ---
---- Used in conjunction with bind_param() ---
+--- Used with bind_param() ---
 
 "INSERT INTO status_updates(st_code, st, share, date, likes, comments, sharing)
 VALUES(?, ?, ?, ?, ?, ?, ?)"
+
+
+--- Searching for all entries that contain the user's keyword within their status. ---
+--- Used with bind_param() ---
+
+"SELECT * FROM status_updates WHERE st LIKE ?"
+
+
+--- Dropping table/resetting database ---
+
+"DROP TABLE IF EXISTS status_updates"

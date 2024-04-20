@@ -6,7 +6,7 @@
         <title>Search Status Process</title>
     </head>
     <body>
-        <h2 class="search_header">Status information</h2>
+        <h2 class="header">Status information</h2>
         <div class="content" id="search_results">
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -70,8 +70,8 @@
 
                                         // Using a div element class='result' so that I can style output better.
                                         echo "<div class='results'>";
-                                        echo "<p><strong>Status: </strong>" . $st . "<br>";
-                                        echo "<strong>Status code: </strong>" . $stcode . "</p>";
+                                        echo "<strong>Status code: </strong>" . $stcode . "<br>";
+                                        echo "<strong>Status: </strong>" . $st . "</p>";
 
                                         echo "<p><strong>Share: </strong>" . $share . "<br>";
                                         echo "<strong>Date Posted: </strong>" . $date . "<br>";

@@ -5,14 +5,13 @@
         <title>Search Status form</title>
     </head>
         <body>
-            <h1 class="search_header">Search for a Status</h1>
+            <h1 class="header">Search for a Status</h1>
             
-            <form class="search_form" action="searchstatusprocess.php" method="GET">
+            <form action="searchstatusprocess.php" method="GET">
 
-                <h3 id="status_search">Status: <input type="text" name="Search">
-                <input type="submit" value="Show Results"></h3>
+                <h3 id="status_search">Status: <input type="text" id="search_textbox" name="Search">
+                <input type="submit" id="search_button" value="Show Results"></h3>
             </form>
-
             <p><a href="index.html" class="homePageLink">Return to Home Page</p></a>
 
         </body>

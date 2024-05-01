@@ -3,29 +3,30 @@
 <head>
         <title>Post a status update.</title>
         <meta http-equiv="Content-type" content ="text/html;charset=utf-8"/>
+        <link rel="stylesheet" href="styles.css">
 </head>
     <body>
-        <h1>Status Posting System</h1>
-        <form action="poststatusprocess.php" method="POST">
+        <h1 class="header">Status Posting System</h1>
+        <form id="post_form" action="poststatusprocess.php" method="POST">
 
             <!-- Status Code -->
-            <div>
+            <div class="post_fields">
                 <label for="stcode">Status Code:</label>
-                <input type="text" id="stcode" name="stcode" pattern="S\d{4}"
+                <input type="text" name="stcode" pattern="S\d{4}"
                             title="Status Code starts with a captial 'S' followed by 4 digits. 'S0001' etc." required>
             </div>
             <br>
 
             <!-- Status -->
-            <div>
+            <div class="post_fields">
                 <label for="st">Status:</label>
-                <input type="text" id="st" name="st"pattern="[A-Za-Z0-9,.\s!?\x20]+"
+                <input type="text" name="st"pattern="[A-Za-Z0-9,.\s!?\x20]+"
                             title="Alphanumeric characters, commas, periods, !, and ? are allowed."required>
             </div>
             <br>
 
             <!-- Share -->
-            <div>
+            <div class="post_fields">
                 <label>Share:</label>
             
                 <input type = "radio" id="University" name="share" value="University">
@@ -41,8 +42,8 @@
             <br>
 
             <!-- Date -->
-            <!-- The date has to be equal to the current date. You can't post in the past or future.-->
-            <div>
+            <!-- The date has to be equal to the current date. You can't post in the past or future. -->
+            <div class="post_fields">
                 <?php $date = date("d/m/Y"); ?>
 
                 <label for="date">Date</label>
@@ -52,7 +53,7 @@
             <br>
 
             <!-- Permission -->
-            <div>
+            <div class="post_fields">
                 <label for="Permission">Permission:</label>
                 
                 <input type="checkbox" id="likes" name="likes" value="likes">
@@ -67,10 +68,10 @@
 
             <!-- Submit button -->
             <div>
-                <input type="submit" value="Submit">
+                <input type="submit" id="submit_button" value="Submit">
             </div>
         </form>
         <br>
-        <a href="http://localhost/Assignment1/index.html">Return to home page</a>
+        <a class="homePageLink" href="index.html">Return to home page</a>
     </body>
 </html>

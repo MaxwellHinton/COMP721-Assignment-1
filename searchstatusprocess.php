@@ -17,10 +17,12 @@
                     
                     if(!empty($search)){
                         
-                        $servername = "localhost";
-                        $username = "root";
-                        $dbname = "a1database";
-                        $conn = new mysqli($servername, $username, '', $dbname);
+                        $servername = "webdev.aut.ac.nz";
+                        $username = "qwv9850";
+                        $dbname = "qwv9850";
+                        $pswd = "ieiiiiflqkxypghzarebahfudsxmvom";
+                        
+                        $conn = new mysqli($servername, $username, $pswd, $dbname);
 
                         if($conn->connect_error){
 
@@ -47,12 +49,11 @@
                                 $search_Result = $statement->get_result();
                                 $statement->close();
 
-                                // Process data
-                                // check that there are matches
+                                // Process data and check for matches.
                                 if($search_Result->num_rows == 0){
 
                                     // No search results were found
-                                    echo "<p>No status was found that contains the keyword " . $search . " Please try again.</p>";
+                                    echo "<p>No status was found that contains the keyword " . "\"$search\"" . " Please try again.</p>";
                                 }
                                 else{
 

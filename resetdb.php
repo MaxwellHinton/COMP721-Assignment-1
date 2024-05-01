@@ -7,20 +7,21 @@
     <body>
         <?php
                 
-            $servername = "localhost";
-            $username = "root";
-            $dbname = "a1database";
+            $servername = "webdev.aut.ac.nz";
+            $username = "qwv9850";
+            $dbname = "qwv9850";
+            $pswd = "ieiiiiflqkxypghzarebahfudsxmvom";
 
-            $conn = new mysqli($servername, $username, '', $dbname);
+            $conn = new mysqli($servername, $username, $pswd, $dbname);
 
-            if($conn->connect_error) {
+            if($conn->connect_error){
 
                 die("Connection failed: " . $conn->connect_error);
             }
 
             $stmt = "DROP TABLE IF EXISTS status_updates";
 
-            if($conn->query($stmt) === TRUE) {
+            if($conn->query($stmt) === TRUE){
 
                 echo "Database table reset successfully.";
             } 

@@ -1,19 +1,5 @@
-/* Search Page and results page Styling */
-#status_search{
-    text-align: left;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: white;
+/* Global styling */
 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px;
-
-    position: absolute;
-    top: 200px;
-    left: 100px;
-}
-/*
-    Search headers include the main headers in searchstatusform.html and searchstatusprocess.php
-*/
 .header{
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -24,36 +10,44 @@
 
     position: relative;
     left: 100px;
-    top: 50px;
-}
-
-
-/* --- Index Page styling --- */
-.index_links{
-    text-align: center;
-    position: fixed;
     
-    bottom: 100px;
-    right: 0;
-    left: 0;
 }
 
-.index_links p{
-    display: inline-block;
-    margin: 0 30px;
-}
-
-.index_links a{
+.homePageLink{
     text-decoration: none; 
-    color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: white;
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
+    
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
 }
 
-.index_links a:hover{
+.homePageLink:hover{
     text-decoration: underline;
+}
+
+body {
+    background-color: lightblue;
+}
+
+
+/* Search/Results page Styling */
+
+#status_search{
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    
+    position: absolute;
+    top: 200px;
+    left: 100px;
 }
 
 #search_button{
@@ -104,20 +98,33 @@
     margin-bottom: 20px;
 }
 
-.homePageLink{
+
+/* --- Index Page Styling --- */
+
+.index_links{
+    text-align: center;
+    position: fixed;
+    
+    bottom: 100px;
+    right: 0;
+    left: 0;
+}
+
+.index_links p{
+    display: inline-block;
+    margin: 0 30px;
+}
+
+.index_links a{
     text-decoration: none; 
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
-    
-    position: fixed;
-    right: 100px;
-    bottom: 100px;
 }
 
-.homePageLink:hover{
+.index_links a:hover{
     text-decoration: underline;
 }
 
@@ -133,6 +140,53 @@
     top: 20px;
 }
 
+/* --- Status posting Styling --- */
+
+.post_fields{
+    text-align: left;
+    font-size: 20px;
+}
+
+#submit_button{
+    text-align: left;
+    font-size: 30px;
+    
+    position: relative;
+    top: 15px;
+    
+    height: 50px;
+    width: 150px;
+}
+
+#post_form{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    padding: 15px 15px;
+
+    position: relative;
+    left: 80px;
+    top: 20px;
+}
+
+#post_again{
+    color: white;
+    text-decoration: none;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+
+    position: fixed;
+    left: 100px;
+    bottom: 100px;
+}
+
+#post_again:hover{
+    text-decoration: underline;
+}
+
+
+/* --- About page Styling --- */
+
 #reset_db{
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -144,6 +198,25 @@
     left: 100px;
 }
 
-body {
-    background-color: lightblue;
+.questions{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 1000px;
+
+    text-align: left;
+    font-size: 20px;
+    text-decoration: underline;
+    padding: 0px 0px;
+
+
+}
+
+#answers{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 1000px;
+    font-size: 15px;
+    position: relative;
+    left:100px;
+    bottom: 30px;
 }

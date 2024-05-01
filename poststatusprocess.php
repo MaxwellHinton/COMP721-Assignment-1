@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-type"Content-type="text/html;charset=utf-8"/>
         <title>Post Status process</title>
+        <link rel="stylesheet"href="styles.css">
     </head>
     <h2>Submission page</h2>
     <body>
@@ -22,9 +23,8 @@
                     isset($_POST["date"])
                 ){
 
-                    #echo "passed form component check";
                     $stcode = $_POST["stcode"];
-                    $st = trim($_POST["st"]);  // Trim the status for leading or trailing spaces (could indicate a blank status).
+                    $st = trim($_POST["st"]);  // Trim the status (could indicate a blank status).
                     $share = $_POST["share"];
                     $status_date = $_POST["date"];
                     $likes = isset($_POST["likes"]) ? TRUE : FALSE;
@@ -43,9 +43,9 @@
                         $servername = "localhost";
                         $username = "root";
                         $dbname = "a1database";
-                        //$table = "status_updates"; - Could use this or just hard-code the table name.
+                        $pswd = "";
 
-                        $conn = new mysqli($servername, $username, '', $dbname);
+                        $conn = new mysqli($servername, $username, $pswd, $dbname);
 
                         if($conn->connect_error){
                             die("Connection to db failed". $conn->connect_error);
@@ -54,7 +54,6 @@
                         else{
 
                             // Check if the status_updates table exists.
-                            #echo "<p>SQL statement is being prepared.</p>";
 
                             // Return a result set of all tables in the db that match 'status_updates'
                             // This is determining whether to create the table or not.
@@ -99,11 +98,13 @@
                                     $likes, $comments, 
                                     $sharing
                                 );
+
+
                                 $stmt->execute();
                                 $stmt->close();
 
                                 echo "<p>Status update posted succesfully.</p>";
-                                echo "<p><a href='poststatusform.php'>Post another status</a></p>";
+                                echo "<p><a id='post_again' href='poststatusform.php'>Post another status</a></p>";
                             } 
                             
                             // Catching duplicate status code errors. 
@@ -131,7 +132,7 @@
                     echo "<p><a href='poststatusform.php'>Please try again</a></p>";
                 }
             }
-            echo "<p><a href='index.html'>Return to Home Page</a></p>";
+            echo "<p><a class='homePageLink' href='index.html'>Return to Home Page</a></p>";
         ?>
     </div>
     </body>
